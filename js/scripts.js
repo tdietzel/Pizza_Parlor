@@ -3,13 +3,11 @@ function Cart() {
     this.pizzas = {};
     this.orderId = 0;
 }
-
 Cart.prototype.addPizza = function(myPizza) {
     myPizza.id = this.orderId;
     this.pizzas[myPizza.id] = myPizza;
     this.orderId++;
 }
-
 Cart.prototype.getPizza = function(id) {
     if (this.pizzas[id] !== undefined) {
         return this.pizzas[id];
@@ -21,7 +19,6 @@ function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
 }
-
 Pizza.prototype.price = function() {
     let basePrice = 8;
     if (this.size === "small") {
@@ -31,7 +28,6 @@ Pizza.prototype.price = function() {
     }
      return this.toppingPrice(basePrice)
 }
-
 Pizza.prototype.toppingPrice = function(basePrice) {
     if (this.toppings.length > 1) {
         basePrice += this.toppings.length - 1;
@@ -71,7 +67,6 @@ function handleSubmit(e) {
 function listOrderSummary(cart) {
     let orderSummary = document.querySelector("div#orderSummary");
     orderSummary.innerText = null;
-    // const h3
     const ul = document.createElement("ul");
     Object.values(cart.pizzas).forEach((pizza) => {
             const li = document.createElement("li");
