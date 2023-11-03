@@ -43,3 +43,24 @@ h3 {
 .hidden {
     display:none;
 }
+#orderDetails {
+    background-color: grey;
+    border: 5px dashed black;
+    color: white;
+    padding: 25px;
+}
+.italic {
+    font-style: italic;
+    color: #f5876f
+}
+#displayPrice {
+    color:#4BB543;
+}
+#pizzaNum {
+    font-weight: 900;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.price {
+    font-style: italic;
+    color:#4BB543;
+}
