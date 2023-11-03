@@ -50,3 +50,15 @@ cart.addPizza(myPizza);
 cart.addPizza(myPizza2);
 console.log(cart);
 __Expected Output:__ Cart {pizzas: {…}, orderId: 2}
+
+# Describe: Cart.prototype.getPizza()
+
+__Test #1:__ "It should find the pizza by its id"
+__Code:__
+let cart = new Cart();
+const myPizza = new Pizza(["anchovies", "pineapple"], "small");
+const myPizza2 = new Pizza(["anchovies", "pineapple", "bacon"], "medium");
+cart.addPizza(myPizza);
+cart.addPizza(myPizza2);
+cart.getPizza(1);
+__Expected Output:__ Pizza {toppings: Array(3), size: 'medium', id: 1}
