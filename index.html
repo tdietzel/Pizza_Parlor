@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/scripts.js"></script>
+    <title>Pizza Parlor</title>
+</head>
+<body>
+    <h1>Welcome to the world famous Pizza Parlor</h1>
+    <h3>Make your Pizza!</h3>
+    <form id="buildAPizza">
+        <fieldset>
+            <legend>Choose your toppings:</legend>
+            <div>
+                <input type="checkbox" id="cheese" name="toppings" checked/>
+                <label for="cheese">Cheese</label>
+                <br>
+                <input type="checkbox" id="pepperoni" name="toppings"/>
+                <label for="pepperoni">Pepperoni</label>
+                <br>
+                <input type="checkbox" id="artichoke" name="toppings"/>
+                <label for="artichoke">Artichoke</label>
+                <br>
+                <input type="checkbox" id="anchovy" name="toppings"/>
+                <label for="anchovy">Anchovy</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Choose your size:</legend>
+            <div>
+                <input type="radio" id="small" name="size"/>
+                <label for="small">Small</label>
+                <br>
+                <input type="radio" id="medium" name="size" checked/>
+                <label for="medium">Medium</label>
+                <br>
+                <input type="radio" id="large" name="size"/>
+                <label for="large">Large</label>
+            </div>
+        </fieldset>
+        <button type="submit">Send your order!</button>
+    </form>
+</body>
+</html>
