@@ -1,0 +1,42 @@
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    margin: none;
+    background-color: #F4ECE1;
+}
+button {
+    background-color: #FF5733;
+    color: white;
+    font-style: oblique;
+    font-weight: 900;
+    border: 3px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease 0s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.button:hover {
+    transform: translateY(-5px);
+}
+legend {
+    font-weight: 700;
+}
+.size {
+    font-family:Verdana;
+    font-weight: 600;
+}
+.toppings {
+    font-family:Verdana;
+    font-weight: 600;
+}
+h3 {
+    color: #FF5733;
+}
+.pointer {
+    cursor:pointer;
+}
