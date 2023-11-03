@@ -23,3 +23,10 @@ __Code:__
 const myPizza = new Pizza(["anchovies", "pineapple"], "small");
 myPizza.price();
 __Expected Output:__ 6
+
+# Describe: Pizza.prototype.toppingPrice()
+__Test #1:__ "It should return +$1 per topping after 1 topping"
+__Code:__
+const myPizza = new Pizza(["anchovies", "pineapple"], "small");
+myPizza.price();
+__Expected Output:__ 7
