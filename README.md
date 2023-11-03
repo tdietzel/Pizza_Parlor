@@ -17,3 +17,9 @@ __Code:__
 const myPizza = new Pizza(["anchovies", "pineapple"], "large");
 myPizza.price();
 __Expected Output:__ 10
+
+__Test #3:__ "It should return -$2 if the pizza is small"
+__Code:__
+const myPizza = new Pizza(["anchovies", "pineapple"], "small");
+myPizza.price();
+__Expected Output:__ 6
