@@ -1,3 +1,4 @@
+// Business Logic
 function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
@@ -20,4 +21,29 @@ Pizza.prototype.toppingPrice = function (basePrice) {
     } else {
         return basePrice;
     }
+}
+
+// UI Logic
+
+window.addEventListener("load", () => {
+    document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit)
+});
+
+function handleSubmit(e) {
+    e.preventDefault();
+
+    const userToppingChoices = document.querySelectorAll('input[type="checkbox"]');
+    const userSizeChoice = document.querySelector('input[type="radio"]:checked');
+    const displayResult = document.querySelector("h2#displayPrice")
+    const toppings = [];
+    const size = userSizeChoice.id;
+
+    userToppingChoices.forEach((topping) => {
+        if (topping.checked) {
+            toppings.push(topping.id)
+        }
+    });
+    let myPizza = new Pizza(toppings, size);
+    const price = myPizza.price();
+    displayResult.innerText = "Your total is $" + price;
 }
