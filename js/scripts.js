@@ -10,6 +10,13 @@ Cart.prototype.addPizza = function(myPizza) {
     this.orderId++;
 }
 
+Cart.prototype.getPizza = function(id) {
+    if (this.pizzas[id] !== undefined) {
+        return this.pizzas[id];
+    }
+    return false;
+}
+
 function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
@@ -35,7 +42,8 @@ Pizza.prototype.toppingPrice = function(basePrice) {
 // UI Logic
 let cart = new Cart();
 window.addEventListener("load", () => {
-    document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit)
+    document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit);
+    listOrderSummary(cart);
 });
 
 function handleSubmit(e) {
@@ -51,8 +59,27 @@ function handleSubmit(e) {
             toppings.push(topping.id);
         }
     });
+
     let myPizza = new Pizza(toppings, size);
-    const price = myPizza.price();
     cart.addPizza(myPizza);
+    const price = myPizza.price();
     displayResult.innerText = "Your total is $" + price;
+    listOrderSummary(cart);
+}
+
+function listOrderSummary(cart) {
+    let orderSummary = document.querySelector("div#orderSummary");
+    orderSummary.innerText = null;
+    const ul = document.createElement("ul");
+    Object.values(cart.pizzas).forEach((pizza) => {
+            const li = document.createElement("li");
+            li.append(pizza.size);
+            li.setAttribute("id", pizza.id);
+            ul.append(li);
+
+            li.addEventListener("click", () => {
+                displayPizzaDetails(pizza.id);
+        });
+    });
+    orderSummary.append(ul);
 }
