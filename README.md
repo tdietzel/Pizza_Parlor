@@ -33,7 +33,20 @@ myPizza.price();
 __Expected Output:__ 7
 
 # Describe: Cart()
+
 __Test #1:__ "It should return a Cart object with two properties for pizzas and id"
 __Code:__
 let myCart = new Cart(myPizza, 0);
 __Expected Output:__ Cart {pizzas: {…}, orderId: 0}
+
+# Describe: Cart.prototype.addPizza()
+
+__Test #1:__ "It should return each pizza with a different id"
+__Code:__
+let cart = new Cart();
+const myPizza = new Pizza(["anchovies", "pineapple"], "small");
+const myPizza2 = new Pizza(["anchovies", "pineapple", "bacon"], "medium");
+cart.addPizza(myPizza);
+cart.addPizza(myPizza2);
+console.log(cart);
+__Expected Output:__ Cart {pizzas: {…}, orderId: 2}
