@@ -4,6 +4,12 @@ function Cart() {
     this.orderId = 0;
 }
 
+Cart.prototype.addPizza = function(myPizza) {
+    myPizza.id = this.orderId;
+    this.pizzas[myPizza.id] = myPizza;
+    this.orderId++;
+}
+
 function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
@@ -34,7 +40,6 @@ window.addEventListener("load", () => {
 
 function handleSubmit(e) {
     e.preventDefault();
-
     const userToppingChoices = document.querySelectorAll('input[type="checkbox"]');
     const userSizeChoice = document.querySelector('input[type="radio"]:checked');
     const displayResult = document.querySelector("h2#displayPrice");
@@ -48,5 +53,6 @@ function handleSubmit(e) {
     });
     let myPizza = new Pizza(toppings, size);
     const price = myPizza.price();
+    cart.addPizza(myPizza);
     displayResult.innerText = "Your total is $" + price;
 }
