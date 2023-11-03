@@ -1,4 +1,9 @@
 // Business Logic
+function Cart() {
+    this.pizzas = {};
+    this.orderId = 0;
+}
+
 function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
