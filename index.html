@@ -14,34 +14,35 @@
     <form id="buildAPizza">
         <fieldset>
             <legend>Choose your toppings:</legend>
-            <div>
-                <input type="checkbox" id="cheese" name="toppings" checked/>
+            <div class="toppings">
+                <input type="checkbox" id="cheese" name="toppings" class="pointer" checked/>
                 <label for="cheese">Cheese</label>
                 <br>
-                <input type="checkbox" id="pepperoni" name="toppings"/>
+                <input type="checkbox" id="pepperoni" name="toppings" class="pointer"/>
                 <label for="pepperoni">Pepperoni</label>
                 <br>
-                <input type="checkbox" id="artichoke" name="toppings"/>
+                <input type="checkbox" id="artichoke" name="toppings" class="pointer"/>
                 <label for="artichoke">Artichoke</label>
                 <br>
-                <input type="checkbox" id="anchovy" name="toppings"/>
+                <input type="checkbox" id="anchovy" name="toppings" class="pointer"/>
                 <label for="anchovy">Anchovy</label>
             </div>
         </fieldset>
         <fieldset>
             <legend>Choose your size:</legend>
-            <div>
-                <input type="radio" id="small" name="size"/>
+            <div class="size">
+                <input type="radio" id="small" name="size" class="pointer"/>
                 <label for="small">Small</label>
                 <br>
-                <input type="radio" id="medium" name="size" checked/>
+                <input type="radio" id="medium" name="size" class="pointer" checked/>
                 <label for="medium">Medium</label>
                 <br>
-                <input type="radio" id="large" name="size"/>
+                <input type="radio" id="large" name="size" class="pointer"/>
                 <label for="large">Large</label>
             </div>
         </fieldset>
-        <button type="submit">Send your order!</button>
+        <button type="submit" class="button">Send your order!</button>
     </form>
+    <h2 id="displayPrice"></h2>
 </body>
 </html>
