@@ -6,10 +6,18 @@ function Pizza(toppings, size) {
 Pizza.prototype.price = function () {
     let basePrice = 8;
     if (this.size === "small") {
-        return basePrice -= 2;
-    } else if (this.size === "medium") {
-        return basePrice;
+        basePrice -= 2;
     } else if (this.size === "large") {
-        return basePrice += 2;
+        basePrice += 2;
+    }
+     return this.toppingPrice(basePrice)
+}
+
+Pizza.prototype.toppingPrice = function (basePrice) {
+    if (this.toppings.length > 1) {
+        basePrice += this.toppings.length - 1;
+        return basePrice;
+    } else {
+        return basePrice;
     }
 }
