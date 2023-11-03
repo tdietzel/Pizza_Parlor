@@ -1,3 +1,48 @@
+# _Worlds Famous Pizza Parlor_
+
+#### By _**Trent Dietzel**_
+
+#### _A website for a pizza company where a user can choose one or more individual toppings, what size they want and see how much it costs._
+
+## Technologies Used
+
+* _HTML_
+* _CSS_
+* _JavaScript_
+
+## Description
+
+_A website to practice using constructors and prototypes! It focuses on using TDD to break down the problem into smaller pieces of functionality (*Bottom of page*). The user is able to choose a variety of toppings, choose between 3 sizes and view all their pizzas details after they are added._
+
+## Setup/Installation Requirements
+
+* _Fork your own copy of this repository from [GitHub](https://github.com/tdietzel22/Pizza_Parlor)_
+* _Open Git BASH [Download Link](https://gitforwindows.org/)_
+* _Use 'git clone projecturl' to clone the project from the forked repo_
+* _Open the project in [VS Code](https://code.visualstudio.com/) (Git shortcut: enter 'code .' after navigating to the top level of the project directory)_
+* _View site on [github-pages](https://tdietzel22.github.io/Pizza_Parlor/)_ __<~~ Try it out now!__
+
+## Known Bugs
+
+* _N/A_
+
+## License
+
+_MIT License_
+
+Copyright (c) _2023 Trent Dietzel_
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Copyright (c) _2023 Trent Dietzel_
+
+
+# __PROJECT TESTS__
+
 # Describe: Pizza()
 
 __Test #1:__ "It should return a Pizza object with two properties for toppings and size"
