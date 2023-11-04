@@ -101,6 +101,7 @@ function handleDelete(event) {
     listOrderSummary(cart);
     document.querySelector("span#totalPrice").innerText = cart.totalPrice;
     document.querySelector("button.deletePizza").removeAttribute("id");
+    document.querySelector("button.deletePizza").classList.add("hidden");
 }
 
 function listOrderSummary() {
@@ -115,6 +116,7 @@ function listOrderSummary() {
         a.addEventListener("click", (event) => {
             event.preventDefault();
             displayPizzaDetails(pizza.id);
+            document.querySelector("button.deletePizza").classList.remove("hidden");
         });
         li.appendChild(a);
         ul.appendChild(li);
