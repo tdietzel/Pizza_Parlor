@@ -2,11 +2,13 @@
 function Cart() {
     this.pizzas = {};
     this.orderId = 0;
+    this.totalPrice = 0;
 }
 Cart.prototype.addPizza = function(myPizza) {
     myPizza.id = this.orderId;
     this.pizzas[myPizza.id] = myPizza;
     this.orderId++;
+    this.totalPrice += myPizza.price();
 }
 Cart.prototype.getPizza = function(id) {
     if (this.pizzas[id] !== undefined) {
@@ -32,6 +34,7 @@ Pizza.prototype.toppingPrice = function(basePrice) {
     if (this.toppings.length > 1) {
         basePrice += this.toppings.length - 1;
     }
+    this.totalPrice += basePrice;
     return basePrice;
 }
 
@@ -39,12 +42,14 @@ Pizza.prototype.toppingPrice = function(basePrice) {
 let cart = new Cart();
 window.addEventListener("load", () => {
     document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit);
+    document.querySelector("button#goToCheckout").addEventListener("click", handleCart);
     listOrderSummary(cart);
 });
 
 function handleSubmit(e) {
     e.preventDefault();
     document.querySelector("div#orderDetails").classList.add("hidden");
+    document.querySelector("button#goToCheckout").classList.remove("hidden");
     const userToppingChoices = document.querySelectorAll('input[type="checkbox"]');
     const userSizeChoice = document.querySelector('input[type="radio"]:checked');
     const displayResult = document.querySelector("h2#displayPrice");
@@ -62,6 +67,17 @@ function handleSubmit(e) {
     const price = myPizza.price();
     displayResult.innerText = "Your total is $" + price;
     listOrderSummary(cart);
+}
+
+function handleCart(e) {
+    e.preventDefault();
+    document.querySelector("button#goToCheckout").classList.add("hidden");
+    document.querySelector("div#orderDetails").classList.add("hidden");
+    document.querySelector("h2#displayPrice").classList.add("hidden");
+    document.querySelector("form#buildAPizza").classList.add("hidden");
+    document.querySelector("div#header").classList.add("hidden");
+    document.querySelector("div#checkoutCart").classList.remove("hidden");
+    document.querySelector("span#totalPrice").innerText = cart.totalPrice;
 }
 
 function listOrderSummary(cart) {
