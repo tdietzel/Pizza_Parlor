@@ -107,3 +107,14 @@ cart.addPizza(myPizza);
 cart.addPizza(myPizza2);
 cart.getPizza(1);
 __Expected Output:__ Pizza {toppings: Array(3), size: 'medium', id: 1}
+
+# Describe: Cart.prototype.deletePizza()
+
+__Test #1:__ "It should delete the pizza from cart when selected."
+__Code:__
+const myPizza = new Pizza(["anchovies", "pineapple"], "small");
+const myPizza2 = new Pizza(["anchovies", "pineapple", "bacon"], "medium");
+cart.addPizza(myPizza);
+cart.addPizza(myPizza2);
+cart.deletePizza(1)
+__Expected Output:__ 0: Pizza {Array(2), size: 'small', id: 0}
