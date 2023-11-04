@@ -66,19 +66,21 @@ function handleSubmit(e) {
 
 function listOrderSummary(cart) {
     let orderSummary = document.querySelector("div#orderSummary");
-    orderSummary.innerText = null;
+    orderSummary.innerHTML = "";
     const ul = document.createElement("ul");
     Object.values(cart.pizzas).forEach((pizza) => {
-            const li = document.createElement("li");
-            li.append(pizza.size);
-            li.setAttribute("id", pizza.id);
-            ul.append(li);
-            // Event listener for clicks on list items
-            li.addEventListener("click", () => {
-                displayPizzaDetails(pizza.id);
-            });
+        const a = document.createElement("a");
+        const li = document.createElement("li");
+        a.href = "#";
+        a.innerText = "Pizza #" + (pizza.id + 1);
+        a.addEventListener("click", (event) => {
+            event.preventDefault();
+            displayPizzaDetails(pizza.id);
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
     });
-    orderSummary.append(ul);
+    orderSummary.appendChild(ul);
 }
 
 function displayPizzaDetails(pizzaId) {
