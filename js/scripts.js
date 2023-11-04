@@ -16,6 +16,13 @@ Cart.prototype.getPizza = function(id) {
     }
     return false;
 }
+Cart.prototype.deletePizza = function(id) {
+    if (this.pizzas[id] === undefined) {
+        return false;
+    }
+    delete this.pizzas[id];
+    return true;
+}
 
 function Pizza(toppings, size) {
     this.toppings = toppings;
@@ -43,6 +50,7 @@ let cart = new Cart();
 window.addEventListener("load", () => {
     document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit);
     document.querySelector("button#goToCheckout").addEventListener("click", handleCart);
+    document.querySelector("button.deletePizza").addEventListener("click", handleDelete);
     listOrderSummary(cart);
 });
 
@@ -80,7 +88,22 @@ function handleCart(e) {
     document.querySelector("span#totalPrice").innerText = cart.totalPrice;
 }
 
-function listOrderSummary(cart) {
+function handleDelete(event) {
+    const target = event.target.id;
+    const deletedPizza = cart.getPizza(target);
+    document.querySelector("div#orderDetails").classList.add("hidden");
+    if (deletedPizza) {
+        const deletedPizzaPrice = deletedPizza.price();
+        cart.totalPrice -= deletedPizzaPrice;
+    }
+    cart.deletePizza(target);
+    document.querySelector("div#orderDetails").classList.add("hidden");
+    listOrderSummary(cart);
+    document.querySelector("span#totalPrice").innerText = cart.totalPrice;
+    document.querySelector("button.deletePizza").removeAttribute("id");
+}
+
+function listOrderSummary() {
     let orderSummary = document.querySelector("div#orderSummary");
     orderSummary.innerHTML = "";
     const ul = document.createElement("ul");
@@ -106,5 +129,6 @@ function displayPizzaDetails(pizzaId) {
     document.querySelector("span#toppings").innerText = pizza.toppings.join(", ");
     document.querySelector("span#price").innerText = pizza.price();
     document.querySelector("span#pizzaNumber").innerText = pizzaId + 1;
+    document.querySelector("button.deletePizza").setAttribute("id", pizzaId);
     document.querySelector("div#orderDetails").removeAttribute("class");
 }
