@@ -52,7 +52,17 @@ window.addEventListener("load", () => {
     document.querySelector("button#goToCheckout").addEventListener("click", handleCart);
     document.querySelector("button.deletePizza").addEventListener("click", handleDelete);
     document.querySelector("button#goBack").addEventListener("click", homePage);
-    document.querySelector("button.purchase").addEventListener("click", );
+    document.querySelector("div#delivery").addEventListener("click", () => {
+        document.querySelector("input#address").classList.remove("hidden");
+        document.querySelector("input#phoneNumber").classList.add("hidden");
+        document.querySelector("input#phoneNumber").value = null;
+    });
+    document.querySelector("div#carryout").addEventListener("click", () => {
+        document.querySelector("input#phoneNumber").classList.remove("hidden");
+        document.querySelector("input#address").classList.add("hidden");
+        document.querySelector("input#address").value = null;
+    });
+    document.querySelector("button#purchase").addEventListener("click", displayReceipt);
     listOrderSummary(cart);
 });
 
@@ -151,4 +161,30 @@ function homePage(e) {
     document.querySelector("p#orOption").classList.add("hidden");
     document.querySelector("div#purchaseOrBack").classList.add("hidden");
     document.querySelector("span#totalPrice").classList.add("hidden");
+    document.querySelector("h4#displayReceipt").innerText = null;
+}
+
+function displayReceipt (e) {
+    e.preventDefault();
+    const address = document.querySelector("input#address").value;
+    const phoneNumber = document.querySelector("input#phoneNumber").value;
+    
+    if (address === '' && phoneNumber === '') {
+        document.querySelector("h4#displayReceipt").classList.remove("hidden");
+        document.querySelector("h4#displayReceipt").innerText = "Please choose delivery or carryout."
+    } else if (address != '') {
+        document.querySelector(".delivery").classList.add("hidden");
+        document.querySelector(".carryout").classList.add("hidden");
+        document.querySelector("p#orOption").classList.add("hidden");
+        document.querySelector("div#purchaseOrBack").classList.add("hidden");;
+        document.querySelector("h4#displayReceipt").innerText = "Great we will arrive at " + address + " soon!";
+        address.value = null;
+    } else {
+        document.querySelector(".delivery").classList.add("hidden");
+        document.querySelector(".carryout").classList.add("hidden");
+        document.querySelector("p#orOption").classList.add("hidden");
+        document.querySelector("div#purchaseOrBack").classList.add("hidden");
+        document.querySelector("h4#displayReceipt").innerText = "Your order will be ready to pickup in 15 minutes";
+        address.value = null;
+    }
 }

@@ -64,28 +64,31 @@
     </div>
     <button class="deletePizza hidden" type="button">Delete Pizza</button>
     <div id="deliveryOptions">
-        <div class="delivery hidden">
+        <div id="delivery" class="delivery hidden">
             <ul>
                 <h4>DELIVERY</h4>
                 <li>Traditional Delivery</li>
                 <li>Hotspot Delivery</li>
             </ul>
+            <input type="text" id="address" class="hidden" placeholder="Delivery Address">
         </div>
         <br>
         <p id="orOption" class="hidden">- OR -</p>
         <br>
-        <div class="carryout hidden">
+        <div id="carryout" class="carryout hidden">
             <ul>
                 <h4>CARRYOUT</h4>
                 <li>Carside Delivery</li>
                 <li>Pick-Up Window</li>
             </ul>
+            <input type="text" id="phoneNumber" class="hidden" placeholder="Phone Number">
         </div>
     </div>
     <div id="purchaseOrBack" class="hidden">
         <button type="button" name="goBack" id="goBack">Go back</button>
-        <button type="button" name="purchase">Purchase</button>
+        <button type="button" name="purchase" id="purchase">Purchase</button>
     </div>
+    <h4 id="displayReceipt"></h4>
     <button id="goToCheckout" type="button" class="button hidden">Head to checkout</button>
     <button id="purchase" type="button" class="button hidden">Purchase</button>
 </body>
