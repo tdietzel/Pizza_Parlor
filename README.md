@@ -1,47 +1,82 @@
-# _Worlds Famous Pizza Parlor_
-
+# World's Famous Pizza Parlor
 #### By _**Trent Dietzel**_
+## Table of Contents
 
-#### _A website for a pizza company where a user can choose one or more individual toppings, what size they want and see how much it costs._
+- [About](#about)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Known Bugs](#known-bugs)
+- [License](#license)
+- [Contact](#contact)
+- [Tests](#tests)
+
+## About
+
+**World's Famous Pizza Parlor** is a web application designed to allow users to customize their pizzas. This project provides an interactive platform for pizza lovers to choose from a variety of toppings, pick the perfect size, and calculate the total cost. It serves as a learning and practice project for using constructors, prototypes, and Test-Driven Development (TDD).
+
+## Demo
+
+You can try out the live demo of the World's Famous Pizza Parlor [here](https://tdietzel22.github.io/Pizza_Parlor/).
 
 ## Technologies Used
 
-* _HTML_
-* _CSS_
-* _JavaScript_
+- HTML
+- CSS
+- JavaScript
 
-## Description
+## Features
 
-_A website to practice using constructors and prototypes! It focuses on using TDD to break down the problem into smaller pieces of functionality (*Bottom of page*). The user is able to choose a variety of toppings, choose between 3 sizes and view all their pizzas details after they are added._
+- **Pizza Customization**: Users can choose from a wide range of toppings to build their customized pizza.
+- **Size Selection**: Three different sizes are available to meet various appetite needs.
+- **Cost Calculation**: The application calculates the total cost based on the user's selections.
+- **Pizza Details**: Users can view all the details of their customized pizza, including size, toppings, and price.
 
-## Setup/Installation Requirements
+## Installation
 
-* _Fork your own copy of this repository from [GitHub](https://github.com/tdietzel22/Pizza_Parlor)_
-* _Open Git BASH [Download Link](https://gitforwindows.org/)_
-* _Use 'git clone projecturl' to clone the project from the forked repo_
-* _Open the project in [VS Code](https://code.visualstudio.com/) (Git shortcut: enter 'code .' after navigating to the top level of the project directory)_
-* _View site on [github-pages](https://tdietzel22.github.io/Pizza_Parlor/)_ __<~~ Try it out now!__
+Follow these steps to set up the project locally:
+1. Open Git BASH [Download Link](https://gitforwindows.org/)
+2. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/Pizza_Parlor.git
+3. Open the project directory:
+   ```bash
+   cd Pizza_Parlor
+4. Open the __index.html__ file in your web browser or use a code editor like __Visual Studio Code__ for further development.
+
+## Usage
+
+To use the World's Famous Pizza Parlor:
+1. Visit the website [Here](https://tdietzel22.github.io/Pizza_Parlor/).
+2. Start by selecting your desired pizza size.
+3. Choose your favorite toppings from the list.
+4. The application will display the total cost of your customized pizza.
+5. Have fun exploring!
+
+## Contributing
+
+I welcome contributions to improve the project. If you'd like to contribute, please follow these guidelines:
+1. Fork the project repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test thoroughly.
+4. Commit your changes with a descriptive commit message.
+5. Push your branch to your forked repository.
+6. Create a pull request to the main repository.
 
 ## Known Bugs
 
 * _N/A_
 
 ## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-_MIT License_
+## Contact
+For any questions, suggestions, or inquiries, please contact **Trent Dietzel** at _dietzelbiz@outlook.com_.
 
-Copyright (c) _2023 Trent Dietzel_
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Copyright (c) _2023 Trent Dietzel_
-
-
-# __PROJECT TESTS__
+## __TESTS__
 
 # Describe: Pizza()
 
