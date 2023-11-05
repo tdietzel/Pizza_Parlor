@@ -1,13 +1,16 @@
+/* Global styles for the entire page */
 body {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height:90vh;
-    margin: none;
+    height: 90vh;
+    margin: 0;
     background-color: #F4ECE1;
 }
+
+/* Button styles */
 button {
     background-color: #FF5733;
     color: white;
@@ -20,103 +23,150 @@ button {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.button:hover {
+
+/* Button hover effect */
+button:hover {
     transform: translateY(-5px);
 }
+
+/* Styling for legends */
 legend {
     font-weight: 700;
 }
+
+/* Styling for pizza size label */
 .size {
-    font-family:Verdana;
+    font-family: Verdana;
     font-weight: 600;
 }
+
+/* Styling for pizza toppings label */
 .toppings {
-    font-family:Verdana;
+    font-family: Verdana;
     font-weight: 600;
 }
+
+/* Heading styles */
 h3 {
     color: #FF5733;
 }
+
+/* Cursor style for elements */
 .pointer {
-    cursor:pointer;
+    cursor: pointer;
 }
+
+/* Styling for order details */
 #orderDetails {
     background-color: grey;
     border: 5px dashed black;
     color: white;
     padding: 25px;
 }
+
+/* Italic text with a specific color */
 .italic {
     font-style: italic;
-    color: #f5876f
+    color: #f5876f;
 }
+
+/* Styling for displaying pizza price */
 #displayPrice {
-    color:#4BB543;
+    color: yellow;
+    text-shadow: 3px 3px 6px #000;
 }
+
+/* Styling for pizza number */
 #pizzaNum {
     font-weight: 900;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
+
+/* Styling for price text */
 .price {
     font-style: italic;
-    color:#4BB543;
+    color: #4BB543;
 }
+
+/* Header styles */
 header {
     background-color: #FF5733;
     border-radius: 15px;
     text-align: center;
     padding: 20px;
 }
+
+/* Top header (h1) styles */
 h1#top-header {
     font-size: 36px;
-    font-family: impact;
+    font-family: Impact;
     color: #FFFFFF;
     text-shadow: 2px 2px 4px #000;
     margin: 0;
 }
+
+/* Sub-header (h3) styles */
 h3#top-header {
     font-size: 36px;
     color: #FFA500;
     text-shadow: 2px 2px 4px #000;
-    margin: 0px 0px 20px 0px;
+    margin: 0 0 20px 0;
 }
+
+/* Styling for legends with a background color */
 legend {
     font-weight: 700;
     color: #FFFFFF;
     text-shadow: 2px 2px 4px #000;
     border-radius: 15px;
-    margin: 0px;
-    padding: 0px 10px 5px 10px;
+    margin: 0;
+    padding: 0 10px 5px 10px;
     width: auto;
 }
-#goToCheckout {
-    background-color: red;
-}
+
+/* Delivery option styles */
 .delivery {
     padding: 50px;
-    font-family: impact;
+    font-family: Impact;
     border: 2px solid orangered;
 }
+
+/* Delivery option hover effect */
 .delivery:hover {
     border: 4px solid orangered;
 }
+
+/* Carryout option styles */
 .carryout {
     padding: 50px 65px 50px 50px;
-    font-family: impact;
+    font-family: Impact;
     border: 2px solid orangered;
 } 
+
+/* Carryout option hover effect */
 .carryout:hover {
     border: 4px solid orangered;
 }
+
+/* Checkout button styles */
+#goToCheckout {
+    background-color: red;
+}
+
+/* Styles for delivery and carryout options container */
 #deliveryOptions {
     display: flex;
     flex-direction: row;
     align-content: space-around;
     text-align: center;
 }
+
+/* Styling for the "or" option */
 #orOption {
     padding: 80px 5px 0px 5px;
 }
+
+/* Hide elements with the "hidden" class */
 .hidden {
-    display:none;
+    display: none;
 }
