@@ -1,33 +1,44 @@
 // Business Logic
+
+// Cart constructor function
 function Cart() {
     this.pizzas = {};
     this.orderId = 0;
     this.totalPrice = 0;
 }
+
+// Add a pizza to the cart
 Cart.prototype.addPizza = function(myPizza) {
     myPizza.id = this.orderId;
     this.pizzas[myPizza.id] = myPizza;
     this.orderId++;
     this.totalPrice += myPizza.price();
-}
+};
+
+// Get a pizza by its ID
 Cart.prototype.getPizza = function(id) {
     if (this.pizzas[id] !== undefined) {
         return this.pizzas[id];
     }
     return false;
-}
+};
+
+// Delete a pizza from the cart
 Cart.prototype.deletePizza = function(id) {
     if (this.pizzas[id] === undefined) {
         return false;
     }
     delete this.pizzas[id];
     return true;
-}
+};
 
+// Pizza constructor function
 function Pizza(toppings, size) {
     this.toppings = toppings;
     this.size = size;
 }
+
+// Calculate the price of a pizza
 Pizza.prototype.price = function() {
     let basePrice = 8;
     if (this.size === "small") {
@@ -35,8 +46,10 @@ Pizza.prototype.price = function() {
     } else if (this.size === "large") {
         basePrice += 2;
     }
-     return this.toppingPrice(basePrice)
-}
+    return this.toppingPrice(basePrice);
+};
+
+// Calculate the price based on the number of toppings
 Pizza.prototype.toppingPrice = function(basePrice) {
     if (this.toppings.length > 1) {
         basePrice += this.toppings.length - 1;
@@ -47,6 +60,8 @@ Pizza.prototype.toppingPrice = function(basePrice) {
 
 // UI Logic
 let cart = new Cart();
+
+// Event listeners and UI-related functions
 window.addEventListener("load", () => {
     document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit);
     document.querySelector("button#goToCheckout").addEventListener("click", handleCart);
@@ -66,6 +81,7 @@ window.addEventListener("load", () => {
     listOrderSummary(cart);
 });
 
+// Handles pizza submission
 function handleSubmit(e) {
     e.preventDefault();
     document.querySelector("div#orderDetails").classList.add("hidden");
@@ -85,10 +101,11 @@ function handleSubmit(e) {
     let myPizza = new Pizza(toppings, size);
     cart.addPizza(myPizza);
     const price = myPizza.price();
-    displayResult.innerText = "Your total is $" + price;
+    displayResult.innerText = "Pizza #" + (myPizza.id + 1) + " is $" + price;
     listOrderSummary(cart);
 }
 
+// Handles the cart
 function handleCart(e) {
     e.preventDefault();
     document.querySelector("button#goToCheckout").classList.add("hidden");
@@ -104,6 +121,7 @@ function handleCart(e) {
     document.querySelector("span#totalPrice").innerText = cart.totalPrice;
 }
 
+// Handles pizza deletion
 function handleDelete(event) {
     const target = event.target.id;
     const deletedPizza = cart.getPizza(target);
@@ -120,6 +138,7 @@ function handleDelete(event) {
     document.querySelector("button.deletePizza").classList.add("hidden");
 }
 
+// Display the list of ordered pizzas
 function listOrderSummary() {
     let orderSummary = document.querySelector("div#orderSummary");
     orderSummary.innerHTML = "";
@@ -140,6 +159,7 @@ function listOrderSummary() {
     orderSummary.appendChild(ul);
 }
 
+// Display details of a selected pizza
 function displayPizzaDetails(pizzaId) {
     document.querySelector("h2#displayPrice").innerText = "Current Pizza's:";
     const pizza = cart.getPizza(pizzaId);
@@ -151,6 +171,7 @@ function displayPizzaDetails(pizzaId) {
     document.querySelector("div#orderDetails").removeAttribute("class");
 }
 
+// Return to the home page
 function homePage(e) {
     e.preventDefault();
     document.querySelector("form#buildAPizza").classList.remove("hidden");
@@ -164,27 +185,28 @@ function homePage(e) {
     document.querySelector("h4#displayReceipt").innerText = null;
 }
 
-function displayReceipt (e) {
+// Display the receipt with delivery or carryout information
+function displayReceipt(e) {
     e.preventDefault();
     const address = document.querySelector("input#address").value;
     const phoneNumber = document.querySelector("input#phoneNumber").value;
-    
+
     if (address === '' && phoneNumber === '') {
         document.querySelector("h4#displayReceipt").classList.remove("hidden");
-        document.querySelector("h4#displayReceipt").innerText = "Please choose delivery or carryout."
-    } else if (address != '') {
+        document.querySelector("h4#displayReceipt").innerText = "Please choose delivery or carryout.";
+    } else if (address !== '') {
         document.querySelector(".delivery").classList.add("hidden");
         document.querySelector(".carryout").classList.add("hidden");
         document.querySelector("p#orOption").classList.add("hidden");
-        document.querySelector("div#purchaseOrBack").classList.add("hidden");;
-        document.querySelector("h4#displayReceipt").innerText = "Great we will arrive at " + address + " soon!";
+        document.querySelector("div#purchaseOrBack").classList.add("hidden");
+        document.querySelector("h4#displayReceipt").innerText = "Great, we will arrive at " + address + " soon!";
         address.value = null;
     } else {
         document.querySelector(".delivery").classList.add("hidden");
         document.querySelector(".carryout").classList.add("hidden");
         document.querySelector("p#orOption").classList.add("hidden");
         document.querySelector("div#purchaseOrBack").classList.add("hidden");
-        document.querySelector("h4#displayReceipt").innerText = "Your order will be ready to pickup in 15 minutes";
+        document.querySelector("h4#displayReceipt").innerText = "Your order will be ready to pick up in 15 minutes.";
         address.value = null;
     }
 }
