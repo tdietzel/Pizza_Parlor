@@ -64,3 +64,34 @@ h3 {
     font-style: italic;
     color:#4BB543;
 }
+header {
+    background-color: #FF5733;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+}
+h1#top-header {
+    font-size: 36px;
+    font-family: impact;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+}
+h3#top-header {
+    font-size: 36px;
+    color: #FFA500;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0px 0px 20px 0px;
+}
+legend {
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #000;
+    border-radius: 15px;
+    margin: 0px;
+    padding: 0px 10px 5px 10px;
+    width: auto;
+}
+#goToCheckout {
+    background-color: red;
+}
