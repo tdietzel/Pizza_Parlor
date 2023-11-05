@@ -51,6 +51,8 @@ window.addEventListener("load", () => {
     document.querySelector("form#buildAPizza").addEventListener("submit", handleSubmit);
     document.querySelector("button#goToCheckout").addEventListener("click", handleCart);
     document.querySelector("button.deletePizza").addEventListener("click", handleDelete);
+    document.querySelector("button#goBack").addEventListener("click", homePage);
+    document.querySelector("button.purchase").addEventListener("click", );
     listOrderSummary(cart);
 });
 
@@ -85,6 +87,10 @@ function handleCart(e) {
     document.querySelector("form#buildAPizza").classList.add("hidden");
     document.querySelector("div#header").classList.add("hidden");
     document.querySelector("div#checkoutCart").classList.remove("hidden");
+    document.querySelector(".delivery.hidden").classList.remove("hidden");
+    document.querySelector(".carryout.hidden").classList.remove("hidden");
+    document.querySelector("p#orOption").classList.remove("hidden");
+    document.querySelector("div#purchaseOrBack").classList.remove("hidden");
     document.querySelector("span#totalPrice").innerText = cart.totalPrice;
 }
 
@@ -133,4 +139,16 @@ function displayPizzaDetails(pizzaId) {
     document.querySelector("span#pizzaNumber").innerText = pizzaId + 1;
     document.querySelector("button.deletePizza").setAttribute("id", pizzaId);
     document.querySelector("div#orderDetails").removeAttribute("class");
+}
+
+function homePage(e) {
+    e.preventDefault();
+    document.querySelector("form#buildAPizza").classList.remove("hidden");
+    document.querySelector("div#header").classList.remove("hidden");
+    document.querySelector("div#checkoutCart").classList.add("hidden");
+    document.querySelector(".delivery").classList.add("hidden");
+    document.querySelector(".carryout").classList.add("hidden");
+    document.querySelector("p#orOption").classList.add("hidden");
+    document.querySelector("div#purchaseOrBack").classList.add("hidden");
+    document.querySelector("span#totalPrice").classList.add("hidden");
 }
